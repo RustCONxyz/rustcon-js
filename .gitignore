@@ -1,0 +1,6 @@
+# Dependencies
+/node_modules
+
+# Build Folder
+/dist
+/deno_dist

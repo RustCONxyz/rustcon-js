@@ -1,0 +1,41 @@
+{
+  "name": "rustcon-js",
+  "version": "1.0.0",
+  "description": "RustCON JS is a JavaScript library for interacting with Rust servers via WebSockets (Web RCON)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/events": "^3.0.3",
+    "@types/ws": "^8.5.10",
+    "denoify": "^1.6.9",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup && denoify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RustCONxyz/rustcon-js.git"
+  },
+  "keywords": [
+    "rcon",
+    "rust",
+    "rustcon",
+    "webrcon"
+  ],
+  "author": "Kopter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RustCONxyz/rustcon-js/issues"
+  },
+  "homepage": "https://github.com/RustCONxyz/rustcon-js#readme"
+}
