@@ -1,6 +1,6 @@
 # RustCON JS
 
-Connect to a Rust server and send a message to the server.
+RustCON JS is a JavaScript library for interacting with Rust servers via WebSockets (Web RCON)
 
 ## Links
 
