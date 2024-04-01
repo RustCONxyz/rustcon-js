@@ -2,6 +2,7 @@
   "name": "rustcon-js",
   "version": "1.0.0",
   "description": "RustCON JS is a JavaScript library for interacting with Rust servers via WebSockets (Web RCON)",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
