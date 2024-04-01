@@ -6,6 +6,13 @@ import Message from "../structures/Message";
 import ConnectionOptions from "../types/ConnectionOptions";
 import { validateConnectionOptions } from "../utils/validators";
 
+interface ClientEvents {
+    "connected": () => void;
+    "message": (message: Message) => void;
+    "error": (error: any) => void;
+    "disconnected": () => void;
+}
+
 export default class Client extends EventEmitter {
 
     public ws: WebSocket | null;
@@ -40,6 +47,12 @@ export default class Client extends EventEmitter {
 
         this.pendingCommands = new Map<number, (value: Message | PromiseLike<Message>) => void>();
 
+    }
+
+    public on<K extends keyof ClientEvents>(e: K, listener: ClientEvents[K]): this { 
+        
+        return super.on(e, listener); 
+    
     }
 
     /**
