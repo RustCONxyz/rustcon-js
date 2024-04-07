@@ -1,0 +1,29 @@
+name: Check if denoify has been runned
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3          
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+      - run: |
+          pnpm run denoify
+          if [[ `git status --porcelain` ]]; then
+            exit 1
+          fi
