@@ -1,5 +1,5 @@
-import WebSocket from "ws";
-import { EventEmitter } from "node:events";
+import { WebSocket } from "unws";
+import { EventEmitter } from "events";
 import ServerManager from "../managers/Server";
 import PlayersManager from "../managers/Players";
 import Message from "../structures/Message";
@@ -49,10 +49,10 @@ export default class Client extends EventEmitter {
 
     }
 
-    public on<K extends keyof ClientEvents>(e: K, listener: ClientEvents[K]): this { 
-        
-        return super.on(e, listener); 
-    
+    public on<K extends keyof ClientEvents>(e: K, listener: ClientEvents[K]): this {
+
+        return super.on(e, listener);
+
     }
 
     /**
@@ -63,13 +63,13 @@ export default class Client extends EventEmitter {
 
         this.ws = new WebSocket(`ws://${this.connectionOptions.ip}:${this.connectionOptions.port ?? 28016}/${this.connectionOptions.password}`);
 
-        this.ws.on("open", this.onConnection.bind(this));
+        this.ws.onopen = this.onConnection.bind(this);
 
-        this.ws.on("message", this.onMessage.bind(this));
+        this.ws.onmessage = (data) => this.onMessage(data.data);
 
-        this.ws.on("error", this.onError.bind(this));
+        this.ws.onerror = this.onError.bind(this);
 
-        this.ws.on("close", this.onClose.bind(this));
+        this.ws.onclose = this.onClose.bind(this);
 
     }
 

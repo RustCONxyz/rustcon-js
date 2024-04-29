@@ -2,6 +2,8 @@
 
 RustCON JS is a JavaScript library for interacting with Rust servers via WebSockets (Web RCON)
 
+Also works on browsers and Deno!
+
 ## Links
 
 - [Website](https://rustcon.xyz)

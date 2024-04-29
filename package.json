@@ -10,14 +10,14 @@
     "dist"
   ],
   "dependencies": {
-    "ws": "^8.16.0"
+    "events": "^3.3.0",
+    "unws": "^0.2.4"
   },
   "devDependencies": {
     "@types/events": "^3.0.3",
-    "@types/ws": "^8.5.10",
     "denoify": "^1.6.9",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
