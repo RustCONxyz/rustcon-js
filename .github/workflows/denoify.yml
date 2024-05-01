@@ -7,7 +7,7 @@ on:
     branches: ['*']
 
 jobs:
-  check:
+  check-denoify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
